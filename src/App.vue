@@ -1,4 +1,14 @@
-<script setup></script>
+<script setup>
+import {ref} from 'vue'
+
+const escuro = ref(false)
+
+function alterarTema() {
+escuro.value = !escuro.value //inverte o valor do escuro
+    document.documentElement.classList.toggle('dark', escuro.value); //toggle coloca ou tira classe
+}
+
+</script>
 
 <template>
   <div class="min-h-screen bg-gray-100 transition-colors dark:bg-gray-900">
@@ -14,10 +24,11 @@
           <a href="#" class="rounded-lg px-3 py-2 transition-colors hover:bg-escola-700">Meus Pedidos</a>
           <a href="#" class="rounded-lg px-3 py-2 transition-colors hover:bg-escola-700">🛒 Carrinho</a>
           <button
+          @click="alterarTema"
             class="rounded-lg px-2 py-2 transition-colors hover:bg-escola-700"
             title="Modo escuro"
           >
-            ☀️
+            {{escuro? '☀️' : '🌙'}}
           </button>
         </div>
       </nav>
