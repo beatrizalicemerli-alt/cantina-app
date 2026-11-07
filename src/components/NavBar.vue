@@ -5,7 +5,8 @@ defineProps({
   totalItens: {
     type: Number,
     default: 0
-  }
+  },
+  
 })
 
 const escuro = ref(false)
@@ -32,7 +33,7 @@ escuro.value = !escuro.value //inverte o valor do escuro
           
             <span v-if="totalItens > 0" 
             class="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-gray-900">
-            {{totalItens}}
+            {{totalItens}} <!-- objeto {{  }}-->
             </span>
           
           </a>
